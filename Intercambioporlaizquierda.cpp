@@ -7,7 +7,7 @@ void intercambiar(int[], int);
 int main() {
     int n;
 
-    cout << "Ordenacion por intercambio por la derecha" << endl;
+    cout << "Ordenacion por intercambio por la izquierda" << endl;
     cout << "Ingrese la cantidad de elementos del arreglo: ";
     cin >> n;
 
@@ -38,12 +38,12 @@ int main() {
 
 void intercambiar(int arreglo[], int n) {
     int temp;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - i; j++) {
-            if (arreglo[j] > arreglo[j + 1]) {
+    for (int i = n; i > 0; i--) {
+        for (int j = n; j > n - i; j--) {
+            if (arreglo[j] < arreglo[j - 1]) {
                 temp = arreglo[j];
-                arreglo[j] = arreglo[j + 1];
-                arreglo[j + 1] = temp;
+                arreglo[j] = arreglo[j - 1];
+                arreglo[j - 1] = temp;
             }
         }
     }
